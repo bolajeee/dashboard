@@ -13,7 +13,7 @@ import {
   Bar,
   Pie,
   Pyramid,
-  Calender,
+  Calendar,
   Financial,
   ColorPicker,
   ColorMapping,
@@ -24,10 +24,12 @@ import {
   Ecommerce,
 } from "./pages";
 
+import { useStateContext } from "./contexts/ContextProvider";
+
 import "./App.css";
 
 const App = () => {
-  const activeMenu = true;
+  const { activeMenu } = useStateContext();
 
   return (
     <div>
@@ -62,7 +64,7 @@ const App = () => {
               </div>
             )}
             <div
-              className={`dark:bg-main-bg bg-main-bg min-h-screen w-full
+              className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full
                ${activeMenu ? "md:ml-72" : "flex-2"}
               `}
             >
@@ -88,7 +90,7 @@ const App = () => {
                 {/* Apps */}
                 <Route path="/kanban" element={<Kanban />} />
                 <Route path="/editor" element={<Editor />} />
-                <Route path="/calender" element={<Calender />} />
+                <Route path="/calendar" element={<Calendar />} />
                 <Route path="/color-picker" element={<ColorPicker />} />
 
                 {/* Charts */}
