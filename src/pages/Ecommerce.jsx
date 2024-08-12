@@ -1,6 +1,6 @@
 import React from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
-import {GoDot} from "react-icons/go"
+import { GoDot } from "react-icons/go";
 import { Stacked, Pie, Button, SparkLine } from "../components";
 import {
   earningData,
@@ -74,6 +74,38 @@ const Ecommerce = () => {
                 </span>
                 <span>Budget</span>
               </p>
+            </div>
+          </div>
+
+          <div className="mt-10 flex gap-10 flex-wrap justify-center">
+            <div className="border-r-1 border-color m-4 pr-10">
+              <div>
+                <p>
+                  <span className="text-3xl font-semibold">$40,023</span>
+                  <span className="p-1.5 hover:drop-shadow-xl cursor-pointer text-white bg-green-400 ml-3 text-xs">
+                    45%
+                  </span>
+                </p>
+                <p className="text-gray-500 mt-1">Budget</p>
+              </div>
+              <div className="mt-8">
+                <p>
+                  <span className="text-3xl font-semibold">$53,023</span>
+                </p>
+                <p className="text-gray-500 mt-1">Expense</p>
+              </div>
+
+              <div className="mt-5 ">
+                <SparkLine
+                  currentColor="blue"
+                  id="line-sparkLine"
+                  type="Line"
+                  height="80px"
+                  width="250px"
+                  data={SparklineAreaData}
+                  color="blue"
+                />
+              </div>
             </div>
           </div>
         </div>
