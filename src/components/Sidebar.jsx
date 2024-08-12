@@ -36,7 +36,7 @@ const Sidebar = () => {
             <Link
               to="/"
               onClick={
-                handleCloseSidebar()
+                handleCloseSidebar
               }
               className="items-center gap-3 ml-3 mt-4
                 flex text-xl font-extrabold tracking-tight 
@@ -70,7 +70,7 @@ const Sidebar = () => {
                   <NavLink
                     to={`/${link.name}`}
                     key={link.name}
-                    onClick={handleCloseSidebar()}
+                    onClick={handleCloseSidebar}
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink
                     }
