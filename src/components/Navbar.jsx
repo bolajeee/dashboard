@@ -29,12 +29,30 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => {
 };
 
 const Navbar = () => {
-  const { activeMenu, setActiveMenu, isClicked, setIsClicked } =
-    useStateContext();
+  const {
+    activeMenu,
+    setActiveMenu,
+    isClicked,
+    setIsClicked,
+    handleClick,
+    screenSize,
+    setScreenSize,
+  } = useStateContext();
 
-  const handleClick = (clicked) => {
-    setIsClicked({ ...isClicked, [clicked]: !isClicked[clicked] });
-  };
+  useEffect(() => {
+    const handleResize = () => setScreenSize(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (screenSize < +900) {
+      setActiveMenu(false);
+    } else {
+      setActiveMenu(true);
+    }
+  }, [screenSize]);  
 
   return (
     <div className="flex justify-between p-2 md:mx-6 relative">
