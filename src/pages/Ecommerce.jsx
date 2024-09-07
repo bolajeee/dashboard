@@ -2,8 +2,9 @@
 import React from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { GoDot } from "react-icons/go";
-import { Button, SparkLine } from "../components";
-import { earningData, SparklineAreaData} from "../data/dummy";
+import { Button, LineChartComponent } from "../components";
+import { earningData, lineChartData, SparklineAreaData } from "../data/dummy";
+
 // import BarChart from "../components/Charts/BarChart";
 
 const Ecommerce = () => {
@@ -98,14 +99,12 @@ const Ecommerce = () => {
               </div>
 
               <div className="mt-5">
-                <SparkLine
-                  id="line-Sparkline"
-                  type='Line'
+                <LineChartComponent
+                  id="line-chart"
                   currentColor="blue"
-                  height='80px'
-                  width='250px'
-                  color="blue"
-                  data={SparklineAreaData}
+                  height="80px"
+                  width="250px"
+                  data={lineChartData}
                 />
               </div>
             </div>
