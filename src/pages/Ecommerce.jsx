@@ -114,9 +114,7 @@ const Ecommerce = () => {
                 width="320px"
                 height="360px"
                 data={stackedChartData}
-                YAxis={stackedPrimaryYAxis}
-                XAxis={stackedPrimaryXAxis}
-                CustomSeries={stackedCustomSeries}
+               
               />
             </div>
           </div>

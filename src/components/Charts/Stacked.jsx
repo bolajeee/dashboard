@@ -1,34 +1,35 @@
-
+import React, { useEffect, useRef } from "react";
 import {
-  ChartComponent,
-  SeriesCollectionDirective,
-  SeriesDirective,
-  Inject,
-  StackingColumnSeries,
-  Category,
-  Tooltip,
-  Legend,
-} from "@syncfusion/ej2-react-charts";
+  IgrCategoryChart,
+  IgrCategoryChartModule,
+} from "igniteui-react-charts";
 
+IgrCategoryChartModule();
 
-const StackedChart = ({ height, width, data, YAxis, XAxis, CustomSeries }) => {
-    return (
+const StackedChart = ({ height, width, data }) => {
+  const chartRef = useRef(null);
+
+  useEffect(() => {
+    console.log(data); // Check the data
+    if (chartRef.current) {
+      chartRef.current.dataSource = data;
+    }
+  }, [data]);
+
+  return (
     <div>
-      <ChartComponent
-        primaryXAxis={XAxis}
-        primaryYAxis={YAxis}
-        tooltip={{ enable: true }}
-        legendSettings={{ visible: true }}
-              height={height}
-              width={width}
-      >
-        <Inject services={[StackingColumnSeries, Category, Tooltip, Legend]} />
-        <SeriesCollectionDirective>
-          {CustomSeries.map((item, index) => (
-            <SeriesDirective key={index} {...item} />
-          ))}
-        </SeriesCollectionDirective>
-      </ChartComponent>
+      <IgrCategoryChart
+        ref={chartRef}
+        width={width}
+        height={height}
+        chartType="column"
+        xAxisTitle="Month"
+        yAxisTitle="Expense"
+        isHorizontalZoomEnabled={false}
+        isVerticalZoomEnabled={false}
+        legend="visible"
+        toolTipType="Category"
+      />
     </div>
   );
 };

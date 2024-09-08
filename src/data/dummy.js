@@ -3059,68 +3059,38 @@ export const ecomPieChartData = [
 
 // chartData.js
 
-export const stackedChartData = [
-  [
-    { x: "Jan", y: 111.1 },
-    { x: "Feb", y: 127.3 },
-    { x: "Mar", y: 143.4 },
-    { x: "Apr", y: 159.9 },
-    { x: "May", y: 159.9 },
-    { x: "Jun", y: 159.9 },
-    { x: "Jul", y: 159.9 },
-  ],
-  [
-    { x: "Jan", y: 120.1 },
-    { x: "Feb", y: 130.5 },
-    { x: "Mar", y: 140.7 },
-    { x: "Apr", y: 150.3 },
-    { x: "May", y: 160.2 },
-    { x: "Jun", y: 170.1 },
-    { x: "Jul", y: 180.0 },
-  ],
-];
+export class StackedChartItem {
+  constructor(init) {
+    Object.assign(this, init);
+  }
 
-export const stackedCustomSeries = [
-  {
-    dataSource: stackedChartData[0],
-    xName: "x",
-    yName: "y",
-    name: "Budget",
-    type: "StackingColumn",
-    background: "blue",
-  },
-  {
-    dataSource: stackedChartData[1],
-    xName: "x",
-    yName: "y",
-    name: "Expense",
-    type: "StackingColumn",
-    background: "red",
-  },
-];
+  Month;
+  Budget;
+  Expense;
+}
 
-export const stackedPrimaryXAxis = {
-  majorGridLines: { width: 0 },
-  minorGridLines: { width: 0 },
-  majorTickLines: { width: 0 },
-  minorTickLines: { width: 0 },
-  interval: 1,
-  lineStyle: { width: 0 },
-  labelIntersectAction: "Rotate45",
-  valueType: "Category",
-};
+export class StackedChartData extends Array {
+  constructor(items = -1) {
+    if (Array.isArray(items)) {
+      super(...items);
+    } else {
+      const newItems = [
+        new StackedChartItem({ Month: "Jan", Budget: 111.1, Expense: 120.1 }),
+        new StackedChartItem({ Month: "Feb", Budget: 127.3, Expense: 130.5 }),
+        new StackedChartItem({ Month: "Mar", Budget: 143.4, Expense: 140.7 }),
+        new StackedChartItem({ Month: "Apr", Budget: 159.9, Expense: 150.3 }),
+        new StackedChartItem({ Month: "May", Budget: 159.9, Expense: 160.2 }),
+        new StackedChartItem({ Month: "Jun", Budget: 159.9, Expense: 170.1 }),
+        new StackedChartItem({ Month: "Jul", Budget: 159.9, Expense: 180.0 }),
+      ];
+      super(...newItems.slice(0, items));
+    }
+  }
+}
 
-export const stackedPrimaryYAxis = {
-  lineStyle: { width: 0 },
-  minimum: 100,
-  maximum: 400,
-  interval: 100,
-  majorTickLines: { width: 0 },
-  majorGridLines: { width: 1 },
-  minorGridLines: { width: 1 },
-  minorTickLines: { width: 0 },
-  labelFormat: "{value}",
-};
+// Example usage
+export const stackedChartData = new StackedChartData();
+
 
 
 // for syncfusion
