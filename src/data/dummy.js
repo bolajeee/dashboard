@@ -2958,13 +2958,33 @@ export const dropdownData = [
   },
 ];
 
-export const SparklineAreaData = [
-  { x: 1, yval: 2 },
-  { x: 2, yval: 6 },
-  { x: 3, yval: 8 },
-  { x: 4, yval: 5 },
-  { x: 5, yval: 10 },
-];
+export class SparklineAreaItem {
+  constructor(init) {
+    Object.assign(this, init);
+  }
+  x;
+  yval;
+}
+
+export class SparklineArea extends Array {
+  constructor(items = -1) {
+    if (Array.isArray(items)) {
+      super(...items);
+    } else {
+      const newItems = [
+        new SparklineAreaItem({ x: 1, yval: 2 }),
+        new SparklineAreaItem({ x: 2, yval: 6 }),
+        new SparklineAreaItem({ x: 3, yval: 8 }),
+        new SparklineAreaItem({ x: 4, yval: 5 }),
+        new SparklineAreaItem({ x: 5, yval: 10 }),
+      ];
+      super(...newItems.slice(0, items > 0 ? items : newItems.length));
+    }
+  }
+}
+
+// Create an instance of SparklineArea
+export const sparklineData = new SparklineArea();
 
 // export const lineCustomSeries = [
 //   {

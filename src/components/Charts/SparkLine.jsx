@@ -1,29 +1,30 @@
-import {
-  SparklineComponent,
-  SparklineTooltip,
-  Inject,
-} from "@syncfusion/ej2-react-charts";
+import React from "react";
+import { IgrSparkline } from "igniteui-react-charts";
+import { IgrPropertyEditorPropertyDescription } from "igniteui-react-layouts";
 
-const SparkLine = ({ id, height, width, color, data, type, currentColor }) => {
-  
-
+const SparkLineChart = ({ height, width, data }) => {
   return (
-    <SparklineComponent
-      id={id}
-      height={height}
-      width={width}
-      lineWidth={5}
-      valueType="Numeric"
-      fill={color}
-      border={{ color: currentColor, width: 5 }}
-      dataSource={data}
-      xName="x"
-      yName="yval"
-      type={type}
-    >
-      <Inject services={[SparklineTooltip]} />
-    </SparklineComponent>
+    <div className="container sample">
+      <div className="container">
+        <IgrSparkline
+          height={height}
+          width={width}
+          displayType="Line"
+          dataSource={data}
+          minimum={2}
+          maximum={10}
+          valueMemberPath="yval"
+          labelMemberPath="x"
+          toolTipType="ToolTip" 
+        />
+        <IgrPropertyEditorPropertyDescription
+          propertyPath="ToolTipType"
+          name="ToolTipTypeEditor"
+          primitiveValue="ToolTip" 
+        />
+      </div>
+    </div>
   );
 };
 
-export default SparkLine;
+export default SparkLineChart;
