@@ -2,8 +2,8 @@
 import React from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { GoDot } from "react-icons/go";
-import { Button, LineChartComponent, SparkLineChart, Stacked } from "../components";
-import { earningData, lineChartData, sparklineData } from "../data/dummy";
+import { Button, LineChartComponent, SparkLineChart,  StackedChart } from "../components";
+import { earningData, lineChartData, sparklineData, stackedChartData, stackedCustomSeries, stackedPrimaryXAxis, stackedPrimaryYAxis } from "../data/dummy";
 
 // import BarChart from "../components/Charts/BarChart";
 
@@ -110,7 +110,14 @@ const Ecommerce = () => {
             </div>
 
             <div>
-              <Stacked width="320px" height="360px" />
+              <StackedChart
+                width="320px"
+                height="360px"
+                data={stackedChartData}
+                YAxis={stackedPrimaryYAxis}
+                XAxis={stackedPrimaryXAxis}
+                CustomSeries={stackedCustomSeries}
+              />
             </div>
           </div>
         </div>

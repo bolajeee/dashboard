@@ -2913,6 +2913,7 @@ export const scheduleData = [
   },
 ];
 
+// for syncfusion
 // export const lineChartData = [
 //   [
 //     { x: new Date(2005, 0, 1), y: 21 },
@@ -2986,6 +2987,8 @@ export class SparklineArea extends Array {
 // Create an instance of SparklineArea
 export const sparklineData = new SparklineArea();
 
+
+// for syncfusion
 // export const lineCustomSeries = [
 //   {
 //     dataSource: lineChartData[0],
@@ -3054,6 +3057,8 @@ export const ecomPieChartData = [
   { x: "2021", y: 18, text: "25%" },
 ];
 
+// chartData.js
+
 export const stackedChartData = [
   [
     { x: "Jan", y: 111.1 },
@@ -3062,16 +3067,16 @@ export const stackedChartData = [
     { x: "Apr", y: 159.9 },
     { x: "May", y: 159.9 },
     { x: "Jun", y: 159.9 },
-    { x: "July", y: 159.9 },
+    { x: "Jul", y: 159.9 },
   ],
   [
-    { x: "Jan", y: 111.1 },
-    { x: "Feb", y: 127.3 },
-    { x: "Mar", y: 143.4 },
-    { x: "Apr", y: 159.9 },
-    { x: "May", y: 159.9 },
-    { x: "Jun", y: 159.9 },
-    { x: "July", y: 159.9 },
+    { x: "Jan", y: 120.1 },
+    { x: "Feb", y: 130.5 },
+    { x: "Mar", y: 140.7 },
+    { x: "Apr", y: 150.3 },
+    { x: "May", y: 160.2 },
+    { x: "Jun", y: 170.1 },
+    { x: "Jul", y: 180.0 },
   ],
 ];
 
@@ -3084,7 +3089,6 @@ export const stackedCustomSeries = [
     type: "StackingColumn",
     background: "blue",
   },
-
   {
     dataSource: stackedChartData[1],
     xName: "x",
@@ -3117,6 +3121,72 @@ export const stackedPrimaryYAxis = {
   minorTickLines: { width: 0 },
   labelFormat: "{value}",
 };
+
+
+// for syncfusion
+// export const stackedChartData = [
+//   [
+//     { x: "Jan", y: 111.1 },
+//     { x: "Feb", y: 127.3 },
+//     { x: "Mar", y: 143.4 },
+//     { x: "Apr", y: 159.9 },
+//     { x: "May", y: 159.9 },
+//     { x: "Jun", y: 159.9 },
+//     { x: "July", y: 159.9 },
+//   ],
+//   [
+//     { x: "Jan", y: 111.1 },
+//     { x: "Feb", y: 127.3 },
+//     { x: "Mar", y: 143.4 },
+//     { x: "Apr", y: 159.9 },
+//     { x: "May", y: 159.9 },
+//     { x: "Jun", y: 159.9 },
+//     { x: "July", y: 159.9 },
+//   ],
+// ];
+
+// export const stackedCustomSeries = [
+//   {
+//     dataSource: stackedChartData[0],
+//     xName: "x",
+//     yName: "y",
+//     name: "Budget",
+//     type: "StackingColumn",
+//     background: "blue",
+//   },
+
+//   {
+//     dataSource: stackedChartData[1],
+//     xName: "x",
+//     yName: "y",
+//     name: "Expense",
+//     type: "StackingColumn",
+//     background: "red",
+//   },
+// ];
+
+// export const stackedPrimaryXAxis = {
+//   majorGridLines: { width: 0 },
+//   minorGridLines: { width: 0 },
+//   majorTickLines: { width: 0 },
+//   minorTickLines: { width: 0 },
+//   interval: 1,
+//   lineStyle: { width: 0 },
+//   labelIntersectAction: "Rotate45",
+//   valueType: "Category",
+// };
+
+// export const stackedPrimaryYAxis = {
+//   lineStyle: { width: 0 },
+//   minimum: 100,
+//   maximum: 400,
+//   interval: 100,
+//   majorTickLines: { width: 0 },
+//   majorGridLines: { width: 1 },
+//   minorGridLines: { width: 1 },
+//   minorTickLines: { width: 0 },
+//   labelFormat: "{value}",
+// };
 
 export const kanbanData = [
   {

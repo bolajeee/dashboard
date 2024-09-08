@@ -11,7 +11,7 @@ export { default as UserProfile } from "./UserProfile";
 
 
 export { default as SparkLineChart } from "./Charts/SparkLine";
-export { default as Stacked } from "./Charts/Stacked";
+export { default as StackedChart } from "./Charts/Stacked";
 export { default as Pie } from "./Charts/PieChart";
 export { default as ChartsHeader } from "./ChartsHeader";
 export { default as Header } from "./Header";

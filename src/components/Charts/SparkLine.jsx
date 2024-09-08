@@ -1,8 +1,8 @@
-import React from "react";
+import {Category, Inject, StackingColumnSeries, Tooltip} from '@syncfusion/ej2-react-charts'
+import { Legend } from 'chart.js';
 import { IgrSparkline } from "igniteui-react-charts";
-import { IgrPropertyEditorPropertyDescription } from "igniteui-react-layouts";
 
-const SparkLineChart = ({ height, width, data }) => {
+const SparkLineChart = ({ height, width, data, currentColor }) => {
   return (
     <div className="container sample">
       <div className="container">
@@ -15,13 +15,11 @@ const SparkLineChart = ({ height, width, data }) => {
           maximum={10}
           valueMemberPath="yval"
           labelMemberPath="x"
-          toolTipType="ToolTip" 
+          toolTipType="item"
+          showDefaultTooltip="true"
+          color={currentColor}
         />
-        <IgrPropertyEditorPropertyDescription
-          propertyPath="ToolTipType"
-          name="ToolTipTypeEditor"
-          primitiveValue="ToolTip" 
-        />
+        <Inject services={[StackingColumnSeries, Category, Tooltip, Legend]} />
       </div>
     </div>
   );
